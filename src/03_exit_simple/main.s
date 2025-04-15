@@ -2,8 +2,8 @@
 .intel_syntax noprefix
 
 _start:
-    mov rax, 1      # syscall read, writing to standard output 1 (0: input, 1: output, 2: error)
-    mov rdi, 1
+    mov rax, 1      # syscall read
+    mov rdi, 1      # file descriptor, writing to standard output = 1 (0: input, 1: output, 2: error)
     lea rsi, [hello_world]    # text buffer, referenced to address of 'hello_world' label
     mov rdx, 13               # length of text buffer
     syscall
